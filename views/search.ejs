@@ -50,7 +50,8 @@
           <h4>제목 : <%= postdata[i].제목 %></h4>
           <p>날짜 : <%= postdata[i].날짜 %></p>
           <button class="btn btn-danger delete" data-id="<%= postdata[i]._id %>">삭제</button>
-          <button class="btn btn-secondary update" data-id="<%= postdata[i]._id %>">수정</button>
+          <button class="btn btn-warning update" data-id="<%= postdata[i]._id %>">수정</button>
+          <button class="btn btn-primary detail" data-id="<%= postdata[i]._id %>">자세히</button>
         </li>
       <% } %>
     </ul>
