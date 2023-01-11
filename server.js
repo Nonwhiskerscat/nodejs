@@ -22,7 +22,8 @@ app.use(passport.session());
 const MongoClient = require('mongodb').MongoClient;
 
 let db;
-MongoClient.connect('mongodb+srv://kidcat:ueno88rabbit@cluster0.rjfx6ce.mongodb.net/?retryWrites=true&w=majority', function(error, client) {
+MongoClient.connect('mongodb+srv://kidcat:ueno88rabbit@cluster0.kst2jy8.mongodb.net/?retryWrites=true&w=majority', function(error, client) {
+  
   if (error) return console.log(error);
 
   db = client.db('todoapp'); 
