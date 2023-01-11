@@ -1,39 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <title>home</title>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    
+    <!-- jquery & bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <script>
+        window.addEventListener('load', ()=> {
+            let add=document.getElementsByClassName('main_add');
+            let list=document.getElementsByClassName('main_list');
+            let login=document.getElementsByClassName('main_login');
+
+            [].forEach.call(add, (cat)=> {
+                cat.onclick = (e) => {
+                    location.href='/write';
+                }
+            });
+
+            [].forEach.call(list, (cat)=> {
+                cat.onclick = (e) => {
+                    location.href='/list';
+                }
+            });
+
+            [].forEach.call(login, (cat)=> {
+                cat.onclick = (e) => {
+                    location.href='/login';
+                }
+            });
+
+        });
+    </script>
+
+    <!-- style -->
+    <style>
+        
+        @font-face {
+            font-family: 'ImcreSoojin';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'ImcreSoojin';
+            font: 20px , sans-serif;
+            min-height: 100vh;
+            background-color: #000620;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 200px;
+            height: 50px;
+        }
+
+
+        .bg-main{
+            position: relative;
+            background-color: #000620;
+            color:#fff;
+            font-weight: bold;
+            min-height: 50vh;
+            text-shadow: 2px 2px 2px gray;
+            background: url('https://images.alphacoders.com/118/thumb-1920-1183017.png');
+            background-size:cover;
+            background-position: center;
+        }
+
+        .oo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .bg-main .h3:first-child {
+            font-size: calc(48px);
+        }
+
+        .bg-main .h3:last-child {
+            font-size: calc(32px);
+        }
+
+        .bg-sub{
+            background-color: #000620;
+            color:#fff;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            font-size: 24px;
+            text-shadow: 2px 2px 2px #e87d9e;
+
+        }
+        .bg-sub2{
+            background-color: #e87d9e;
+            color:white;
+            text-shadow: 2px 2px 2px #000620;
+            padding-top: 70px;
+            padding-bottom: 100px;
+            font-size: 24px;
+        }
+
+        svg {
+            width: 100px;
+            height: 100px;
+            color: white;
+        }
+
+        svg:hover {
+                color: #000620;
+                transition: all 0.5s linear;
+            }
+
+        .footer{
+        background-color: #000620;
+        color:#ccc;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        font-size: 16px;
+        }
+    </style>
+
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-    <a class="navbar-brand" href="#">TodoApp</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/write">Write</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/list">리스트</a>
-            </li>
-        </ul>
-    </div>
-    </div>
-</nav>
-  <h1>Home</h1>
-  <p>안녕하세요~ 홈페이지입니다.</p>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <!-- nav bars -->
+
+
+    <!-- main content -->
+    <div class="container-fluid text-center bg-main">
+        <div class="oo">
+            <p class="h3">Kidcat</p>
+            <p class="h3">Node Portfolio</p>
+            <button class="btn btn-outline-light main_list" data-id="<%= postdata[i]._id %>" name="add">Enter Page</button>
+        </div>
+
+    </div>
+    
+    <!-- sub content -->
+    <div class="contaniner-fluid text-center bg-sub">
+        <p class="h3">Todo App</p>
+        <p>이번에는 TodoApp을 Node JS로 구현해보았습니다.</p>
+    </div>
+
+    <!-- sub content -->
+    <div class="contaniner-fluid text-center bg-sub2">
+        <p class="h3">Enter</p>
+        <div class="row">
+            <div class="col-sm-4 main_add" name="add">
+                <p>Add</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                </svg>
+            </div>
+            <div class="col-sm-4 main_list" name="list">
+                <p>List</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                </svg>
+            </div>
+            <div class="col-sm-4 main_login" name="login">
+                <p>Login</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 main_add" name="add">
+
+            </div>
+            <div class="col-sm-4 main_list" name="list">
+
+            </div>
+            <div class="col-sm-4 main_login" name="login">
+
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- footer -->
+    <div class="container-fluid text-center footer">
+        <p>It is made by Kidcat Nyantopia whose real name is Seoyong Kim.</p>
+    </div>
 </body>
 </html>

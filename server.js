@@ -57,13 +57,13 @@ app.get("/write", (req, res) => {
 app.post("/add", (req, res) => {
   res.send("전송완료");
 
-  db.collection('counter').findOne({name: '게시물의갯수'} , (error,result)=>{
+  db.collection('counter').findOne({name: '게시물갯수'} , (error,result)=>{
 
-    let totalPostingCount = result.totalPost
+    let totalPostingCount = result.totalPost;
 
-    db.collection("post").insertOne({_id : totalPostingCount + 1, 이름: req.body.title, 나이: req.body.date },
+    db.collection("post").insertOne({_id : totalPostingCount + 1, 제목: req.body.title, 날짜: req.body.date },
       (error, result) => { 
-       db.collection('counter').updateOne({name:'게시물의갯수'},
+        db.collection('counter').updateOne({name:'게시물갯수'},
         { $inc : {totalPost : 1}}, (error , result) => {
           if(error) return console.log(error);
         })
@@ -114,9 +114,13 @@ app.get('/login', function(req, res) {
   res.render('login.ejs');
 });
 
+app.get('/fail', function(req, res) {
+  res.render('fail.ejs');
+});
+
 
 app.post('/login', passport.authenticate('local', {failureRedirect: '/fail'}) ,function(req, res) { 
-  res.redirect('/'); 
+  res.redirect('/mypage'); 
 });
 
 
@@ -162,7 +166,7 @@ function loginFn (req, res, next) {
   if (req.user) { 
     next()
   } else {
-    res.send('로그인 불가!')
+    res.send('로그인 불가!');
   }
 }
 
