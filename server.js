@@ -9,7 +9,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 
- 
 const methodOverride = require('method-override')
 app.use(methodOverride('_method'))
 
